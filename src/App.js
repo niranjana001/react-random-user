@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [userData, setUserData] = useState(null);
-  const [backgroundColor, setBackgroundColor] = useState('#000000');
+  const [backgroundColor, setBackgroundColor] = useState('#000000 ');
   const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
@@ -30,10 +30,11 @@ function App() {
   const darkColors = ['#2c3e50', '#34495e', '#7f8c8d', '#8e44ad', '#2c3e50']; // Add your dark colors here
 
   const changeBackgroundColor = () => {
-    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    const randomIndex = Math.floor(Math.random() * darkColors.length);
+    const randomColor = darkColors[randomIndex];
     setBackgroundColor(randomColor);
   };
-
+  
 
   return (
     <div className="container">
