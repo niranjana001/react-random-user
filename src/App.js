@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [userData, setUserData] = useState(null);
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+  const [backgroundColor, setBackgroundColor] = useState('#000000');
   const [totalUsers, setTotalUsers] = useState(0);
 
   useEffect(() => {
@@ -27,31 +27,33 @@ function App() {
     changeBackgroundColor();
   };
 
+  const darkColors = ['#2c3e50', '#34495e', '#7f8c8d', '#8e44ad', '#2c3e50']; // Add your dark colors here
+
   const changeBackgroundColor = () => {
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     setBackgroundColor(randomColor);
   };
 
+
   return (
-    <div className="container" >
+    <div className="container">
       <header>
-        <h1>Random User Generator</h1>
+        <h1  >Random User Generator</h1>
         <button className="refresh-button" onClick={handleRefresh}>Refresh</button>
-        <p>Total Users: {totalUsers}</p>
       </header>
-      <main >
+      <main>
         {userData && (
           <div className="user-details" style={{ backgroundColor }}>
             <div className="user-avatar">
               <img src={userData.image} alt="User Avatar" />
             </div>
             <div className="user-info">
-              <p><strong>Name:</strong> {userData.firstName} {userData.lastName}</p>
-              <p><strong>Email:</strong> {userData.email}</p>
-              <p><strong>Phone:</strong> {userData.phone}</p>
-              <p><strong>Age:</strong> {userData.age}</p>
-              <p><strong>Gender:</strong> {userData.gender}</p>
-              <p><strong>Address:</strong> {userData.address.address}, {userData.address.city}, {userData.address.state}, {userData.address.postalCode}</p>
+              <p><strong  >Name:</strong> {userData.firstName} {userData.lastName}</p>
+              <p><strong  >Email:</strong> {userData.email}</p>
+              <p><strong  >Phone:</strong> {userData.phone}</p>
+              <p><strong  >Age:</strong> {userData.age}</p>
+              <p><strong  >Gender:</strong> {userData.gender}</p>
+              <p><strong  >Address:</strong> {userData.address.address}, {userData.address.city}, {userData.address.state}, {userData.address.postalCode}</p>
             </div>
           </div>
         )}
