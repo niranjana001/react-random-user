@@ -57,4 +57,9 @@ main {
 
 .user-info p {
   margin: 5px 0;
+
+}
+
+.user-info{
+  text-align: left;
 }

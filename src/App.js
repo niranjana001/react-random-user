@@ -33,15 +33,15 @@ function App() {
   };
 
   return (
-    <div className="container" style={{ backgroundColor }}>
+    <div className="container" >
       <header>
         <h1>Random User Generator</h1>
         <button className="refresh-button" onClick={handleRefresh}>Refresh</button>
         <p>Total Users: {totalUsers}</p>
       </header>
-      <main>
+      <main >
         {userData && (
-          <div className="user-details">
+          <div className="user-details" style={{ backgroundColor }}>
             <div className="user-avatar">
               <img src={userData.image} alt="User Avatar" />
             </div>
